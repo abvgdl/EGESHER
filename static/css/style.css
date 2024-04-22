@@ -1,0 +1,113 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+body {
+    font-family: "Cambria";
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    display: flex;
+    background-color: #e0e0e0;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Стили для кнопок и меню */
+.buttons {
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.button:hover {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.menu {
+    margin-top: 0.5%;
+    display: flex;
+    vertical-align: center;
+    list-style: none;
+    padding: 0;
+    gap: 100px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.menu li a:hover {
+    letter-spacing: -2px;
+    font-family: pixel;
+    text-decoration: none;
+    color: #ff0000;
+    font-size: 20px;
+    padding: 22px;
+}
+
+.div_disc {
+    display: block;
+    vertical-align: center;
+}
+.discussion {
+    position: absolute;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    padding-left: 20px;
+    padding-top: 0.75%;
+
+}
+.discussion:hover{
+    color: red;
+    letter-spacing: -2px;
+    font-family: pixel;
+    position: absolute;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-top: 0.75%;
+}
+
+
+@font-face {
+font-family: "pixel";
+src: url("../fonts/pixelcyr_normal.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

@@ -1,0 +1,33 @@
+.reg_form{
+    display: block;
+}
+.div1  {
+    text-align: center;
+    padding: 30px;
+}
+#text{
+    font-size: 40px;
+    text-decoration: underline;
+}
+.div_btn {
+    text-align: center;
+    padding: 25px;
+}
+.submit-btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+    display: inline-block;
+    width: auto;
+}
