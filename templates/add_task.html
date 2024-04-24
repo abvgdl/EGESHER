@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<link rel="stylesheet" href="/static/css/form.css">
+<div class="container">
+    <div class="div1"><h2 id="text">ДОБАВИТЬ ЗАДАНИЕ</h2></div>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="input_field_short">
+            {{ form.subject.label(class="control-label") }}
+            {{ form.subject(class="form-control") }}
+        </div>
+        <div class="input_field_short">
+            {{ form.number.label(class="control-label") }}
+            {{ form.number(class="form-control") }}
+        </div>
+        <div class="input_field_long">
+            {{ form.description.label(class="control-label") }}
+            {{ form.description(class="textarea_long") }}
+        </div>
+        <div class="input_field_long">
+            {{ form.condition.label(class="control-label") }}
+            {{ form.condition(class="textarea_long") }}
+        </div>
+        <div class="input_field_short">
+            {{ form.image.label(class="control-label") }}
+            {{ form.image(class="form-control") }}
+        </div>
+        <div class="input_field_short">
+            {{ form.answer.label(class="control-label") }}
+            {{ form.answer(class="form-control") }}
+        </div>
+        <div class="input_field_short">
+            {{ form.answer_image.label(class="control-label") }}
+            {{ form.answer_image(class="form-control") }}
+        </div>
+        <div class="input_field_long" id="codeAnswerField" style="display: none;">
+            {{ form.code_answer.label(class="control-label") }}
+            {{ form.code_answer(class="textarea_long_code") }}
+        </div>
+        <div class="div_btn">
+            {{ form.submit(class="submit-btn") }}
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("subject").addEventListener("change", function () {
+        var subjectValue = this.value;
+        var codeAnswerField = document.getElementById("codeAnswerField");
+
+        if (subjectValue === "Информатика") {
+            codeAnswerField.style.display = "block";
+        } else {
+            codeAnswerField.style.display = "none";
+        }
+    });
+</script>
+
+
+{% endif %}
+{% endblock %}

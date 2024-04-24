@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="div_select">
+        <label>
+            <select class="select" name="forma" onchange="location = this.value;">
+                <option selected disabled>Выберите задание</option>
+                {% for num in tasks_count %}
+                <option value="/{{subject}}/{{num}}">{{num}}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </div>
+    {% block tasks %}
+    {% endblock %}
+</div>
+{% endblock %}

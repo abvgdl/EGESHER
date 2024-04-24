@@ -1,0 +1,108 @@
+.task_block{
+    display: block;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 12px;
+    margin: 20px;
+}
+.task_number{
+    margin: 3px;
+}
+.additional_information{
+    margin: 0;
+    padding: 2px;
+}
+.description{
+    font-size: 12px;
+    color: #4b4b4b;
+    margin: 3px;
+}
+
+.task_information{
+    font-size: 10px;
+    color: #4b4b4b;
+    padding: 0;
+    margin: 0;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.condition{
+    font-size: 15px;
+}
+.answer_div{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.answer{
+    margin: 15px;
+    padding: 0;
+    font-size: 15px;
+    background-color: black;
+}
+.answer::after {
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    background-color: black;
+    color: #f1f1f1;
+    text-decoration: none;
+    content: attr(text);
+}
+
+.answer:hover::after {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background-color: black;
+    color: #f1f1f1;
+    text-decoration: none;
+    content: attr(hover-text);
+}
+
+.answer_text{
+    text-align: center;
+    font-size: 35px;
+    background-color: black;
+    color: #f1f1f1;
+}
+
+.div_select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select{
+    font-size: 25px;
+    margin: 30px;
+    border-width: 5px;
+    border-color: black;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.select:not([multiple]) {
+    padding-right: 1.2em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.btn{
+    margin: 15px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: black;
+    color: #f1f1f1;
+    text-decoration: none;
+}

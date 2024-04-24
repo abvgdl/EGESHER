@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>replit</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
@@ -17,6 +17,8 @@
     <div id="title"><img src="/static/images/logo.gif" alt="Logo" style="width:330px;height:85px;"></div>
     <div class="buttons">
         {% if current_user.is_authenticated %}
+        <div class="div2"><a class="btn_add_task" href="/add_task" >Создать задание</a></div>
+
         <span class="navbar-text">Добро пожаловать, {{ current_user.username }}!</span>
         {% else %}
         <a href="/login" class="button">ВХОД</a>
@@ -30,9 +32,9 @@
 <nav>
     <ul class="menu">
         <li><a href="/russian">Русский язык</a></li>
-        <li><a href="#">Математика</a></li>
-        <li><a href="#">Физика</a></li>
-        <li><a href="#">Информатика</a></li>
+        <li><a href="/math">Математика</a></li>
+        <li><a href="/physic">Физика</a></li>
+        <li><a href="/informatics">Информатика</a></li>
     </ul>
 </nav>
 

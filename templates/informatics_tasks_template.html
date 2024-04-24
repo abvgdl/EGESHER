@@ -1,0 +1,37 @@
+{% extends "select_task.html" %}
+
+{% block tasks %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/static/css/display_tasks.css">
+<div class="container">
+
+    {{ default_value }}
+    {% for task in tasks %}
+    <div class="task_block">
+        <h1 class="task_number">{{ task.number }}_{{ task.id }}</h1>
+        <div class="additional_information">
+            <h5 class="description">*{{task.description}}</h5>
+            <h6 class="task_information">Автор: {{task.author.username}}</h6>
+            <h6 class="task_information">Дата {{task.date}}</h6>
+        </div>
+        <h3 class="condition">{{task.condition}}</h3>
+        {% if task.photo_url %}
+        <img src="{{task.photo_url}}" alt="answer_image" class="image">
+        {% endif %}
+        <button class="btn" data-toggle="collapse" data-target="#demo{{task.id}}">ПОКАЗАТЬ ОТВЕТ</button>
+        <div id="demo{{task.id}}" class="collapse">
+            <h3 class="answer_text">{{task.answer}}</h3>
+            {% if task.answer_photo_url %}
+            <img src="{{task.answer_photo_url}}" alt="answer_image" class="image">
+            {% endif %}
+            <p>Решение на Python</p>
+            <pre><code>{{task.code_answer}}</code></pre>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
+

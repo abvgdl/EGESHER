@@ -31,3 +31,34 @@ input[type="checkbox"] {
     display: inline-block;
     width: auto;
 }
+
+.input_field_short{
+    display: block;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 10px;
+
+}
+
+.input_field_long{
+    display: block;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 10px;
+}
+.textarea_long{
+    display: flex;
+    height: 175px;
+    width: 100%;
+    padding: 0;
+    resize: none;
+}
+.textarea_long_code{
+    border-color: #fddab7;
+    border-width: 5px;
+    display: flex;
+    height: 175px;
+    width: 100%;
+    padding: 0;
+    resize: none;
+}

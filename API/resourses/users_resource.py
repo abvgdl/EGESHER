@@ -50,6 +50,7 @@ class UsersListResource(Resource):
         new_user.id = len(session.query(User).all()) + 1
         new_user.username = args['username']
         new_user.email = args['email']
+        new_user.role = args['role']
         new_user.set_password(args['password'])
         session.add(new_user)
         session.commit()
