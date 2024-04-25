@@ -10,7 +10,11 @@
     {{ default_value }}
     {% for task in tasks %}
     <div class="task_block">
-        <h1 class="task_number">{{ task.number }}_{{ task.id }}</h1>
+        <div class="div3"><h1 class="task_number">{{ task.number }}_{{ task.id }}</h1>
+            {% if current_user.id == task.author_id or current_user.id == 1%}
+            <a id="del_btn" href="{{ url_for('delete_task', task_id=task.id) }}" class="alert-danger">Удалить</a>
+            {% endif %}
+        </div>
         <div class="additional_information">
             <h5 class="description">*{{task.description}}</h5>
             <h6 class="task_information">Автор: {{task.author.username}}</h6>
@@ -20,16 +24,42 @@
         {% if task.photo_url %}
         <img src="{{task.photo_url}}" alt="answer_image" class="image">
         {% endif %}
-        {% if task.answer_photo_url %}
-        <button class="btn" data-toggle="collapse" data-target="#demo">ПОКАЗАТЬ ОТВЕТ</button>
-        <div id="demo" class="collapse">
-            <h3 class="answer_text">{{task.answer}}</h3>
-            <img src="{{task.answer_photo_url}}" alt="answer_image" class="image">
+        <div class="options">
+            {% if current_user.is_authenticated %}
+            <div class="btns">
+                <button class="btn" data-toggle="collapse" data-target="#comments{{task.id}}">ПОКАЗАТЬ ОБСУЖДЕНИЕ</button>
+                {% if task.answer_photo_url %}
+                <button class="btn" data-toggle="collapse" data-target="#demo{{task.id}}">ПОКАЗАТЬ ОТВЕТ</button>
+                {% else %}
+                <button class="answer" text="ПОКАЗАТЬ ОТВЕТ" hover-text="{{task.answer}}"></button>
+                {% endif %}
+            </div>
+            <div id="comments{{task.id}}" class="collapse">
+                <form method="POST" class="comment_form">
+                    {{ comment_form.csrf_token }}
+                    <input type="hidden" name="task_id" value="{{ task.id }}">
+                    <div class="input_field_long">
+                        {{ comment_form.text.label(class="control-label") }}
+                        {{ comment_form.text(class="textarea_long") }}
+                    </div>
+                    <div class="div_btn">
+                        {{ comment_form.submit(class="submit-btn") }}
+                    </div>
+                </form>
+                {% for comment in task.comments %}
+                <span>Написал: {{comment.author.username}} Когда:{{comment.date}}</span>
+                <pre>{{comment.text}}</pre>
+                {% endfor %}
+            {% endif %}
+            </div>
+            {% if task.answer_photo_url %}
+            <div id="demo{{task.id}}" class="collapse">
+                <h3 class="answer_text">{{task.answer}}</h3>
+                <img src="{{task.answer_photo_url}}" alt="answer_image" class="image">
+            </div>
+            {% endif %}
         </div>
-        {% else %}
-        <div class="answer_div"></div>
-        <button class="answer" text="ПОКАЗАТЬ ОТВЕТ" hover-text="{{task.answer}}"></button>
-        {% endif %}
+
     </div>
     {% endfor %}
 

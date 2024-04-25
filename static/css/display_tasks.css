@@ -106,3 +106,28 @@
     color: #f1f1f1;
     text-decoration: none;
 }
+
+.div3{
+    display: block;
+}
+
+#del_btn{
+    margin-right: 50px;
+}
+
+.options{
+    display: block;
+}
+
+.input_field_long{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.textarea_long{
+    height: 175px;
+    width: 100%;
+    padding: 0;
+    resize: none;
+}

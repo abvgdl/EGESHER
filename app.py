@@ -1,5 +1,6 @@
 from flask_restful import Api
 from API.resourses import users_resource
+from API.resourses import task_resource
 import os
 from flask import Flask
 import db_session
@@ -10,7 +11,9 @@ app = Flask(__name__)
 
 api = Api(app)
 api.add_resource(users_resource.UsersListResource, '/api/v2/users')
-api.add_resource(users_resource.UsersResource, '/api/v2/users/<int:user_id>')
+api.add_resource(users_resource.UsersResource, '/api/v2/users/<int:task_id>')
+api.add_resource(task_resource.TaskListResource, '/api/v2/tasks')
+api.add_resource(task_resource.TaskResource, '/api/v2/tasks/<int:task_id>')
 
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
